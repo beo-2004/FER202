@@ -9,17 +9,17 @@ function Header() {
             <div className="menu">
               <ul className="nav fs-5">
                 <li className="nav-item">
-                  <a className="nav-link active " aria-current="page" href="/">
+                  <a className="nav-link active text-white" aria-current="page" href="/">
                     Home
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link " href="/">
+                  <a className="nav-link text-white" href="/">
                     About us
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link " href="/">
+                  <a className="nav-link text-white" href="/">
                     Contact
                   </a>
                 </li>
@@ -35,7 +35,7 @@ function Header() {
                 aria-label="Search"
               />
               <button className="btn btn-danger" type="submit">
-                <i class="bi bi-search"></i>
+                <i className="bi bi-search"></i>
               </button>
             </form>
           </div>

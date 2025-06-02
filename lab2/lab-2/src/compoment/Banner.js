@@ -1,23 +1,23 @@
+// Import pizza images from assets
+import pizza1 from "../assets/pizza1.jpg";
+import pizza2 from "../assets/pizza2.jpg";
+import pizza3 from "../assets/pizza3.jpg";
+import pizza4 from "../assets/pizza4.jpg";
+import pizza5 from "../assets/pizza5.jpg";
 
-import pizza1 from "./assets/pizza1.jpg";
-import pizza2 from "./assets/pizza2.jpg";
-import pizza3 from "./assets/pizza3.jpg";
-import pizza4 from "./assets/pizza4.jpg";
-import pizza5 from "./assets/pizza5.jpg";
-
-
+// Banner component displays a Bootstrap carousel with pizza images and captions
 function Banner() {
   return (
-    
+    // Main container for the banner
     <div className="banner container-fluid p-0">
-      {}
+      {/* Bootstrap carousel setup */}
       <div
         id="carouselExampleIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
         data-bs-interval="2000"
       >
-        {}
+        {/* Rest of the code remains the same */}
         <div className="carousel-indicators">
           <button
             type="button"
@@ -52,16 +52,16 @@ function Banner() {
             aria-label="Slide 5"
           />
         </div>
-        {}
+        {/* Carousel slides */}
         <div className="carousel-inner">
-          {}
+          {/* First slide */}
           <div className="carousel-item active">
             <img
               src={pizza1}
               className="d-block w-100 banner-img"
               alt="Slide 1"
             />
-            {}
+            {/* Caption */}
             <div className="carousel-caption d-none d-md-block">
               <h3>Neapolitan Pizza</h3>
               <p className="fs-5">
@@ -70,7 +70,7 @@ function Banner() {
               </p>
             </div>
           </div>
-          {}
+          {/* Second slide */}
           <div className="carousel-item">
             <img
               src={pizza2}
@@ -85,7 +85,7 @@ function Banner() {
               </p>
             </div>
           </div>
-          {}
+          {/* Third slide */}
           <div className="carousel-item">
             <img
               src={pizza3}
@@ -100,7 +100,7 @@ function Banner() {
               </p>
             </div>
           </div>
-          {}
+          {/* Fourth slide */}
           <div className="carousel-item">
             <img
               src={pizza4}
@@ -115,7 +115,7 @@ function Banner() {
               </p>
             </div>
           </div>
-          {}
+          {/* Fifth slide */}
           <div className="carousel-item">
             <img
               src={pizza5}
@@ -132,7 +132,7 @@ function Banner() {
           </div>
         </div>
 
-        {}
+        {/* Navigation controls */}
         <button
           className="carousel-control-prev"
           type="button"
@@ -155,6 +155,5 @@ function Banner() {
     </div>
   );
 }
-
 
 export default Banner;
