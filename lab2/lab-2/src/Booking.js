@@ -23,12 +23,36 @@ function Booking() {
               />
             </div>
             <div className="col-md-4">
-              <select id="service" className="form-select">
-                <option value="">Select a service</option>
-                <option value="dine-in">Dine In</option>
-                <option value="takeaway">Takeaway</option>
-                <option value="delivery">Delivery</option>
-              </select>
+              <div className="dropdown w-100">
+                <button
+                  className="form-select text-start"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Select a service
+                </button>
+                <ul className="dropdown-menu w-100">
+                  <li>
+                    <button type="button" className="dropdown-item d-flex align-items-center">
+                      <i className="bi bi-shop-window me-2"></i>
+                      Dine In
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="dropdown-item d-flex align-items-center">
+                      <i className="bi bi-bag me-2"></i>
+                      Takeaway
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="dropdown-item d-flex align-items-center">
+                      <i className="bi bi-bicycle me-2"></i>
+                      Delivery
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="mb-3">

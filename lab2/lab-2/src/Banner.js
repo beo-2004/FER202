@@ -15,6 +15,7 @@ function Banner() {
         id="carouselExampleIndicators"
         className="carousel slide"
         data-bs-ride="carousel"
+        data-bs-interval="2000"
       >
         {/* Carousel indicators (dots) for navigation */}
         <div className="carousel-indicators">
@@ -61,10 +62,10 @@ function Banner() {
               alt="Slide 1"
             />
             {/* Caption for the slide */}
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h3>Neapolitan Pizza</h3>
               <p className="fs-5">
-                If you are looking for traditional Italian pizza ,the Neapolitan
+                If you are looking for traditional Italian pizza, the Neapolitan
                 is the best option!
               </p>
             </div>
@@ -76,10 +77,10 @@ function Banner() {
               className="d-block w-100 banner-img"
               alt="Slide 2"
             />
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h3>Neapolitan Pizza</h3>
               <p className="fs-5">
-                If you are looking for traditional Italian pizza ,the Neapolitan
+                If you are looking for traditional Italian pizza, the Neapolitan
                 is the best option!
               </p>
             </div>
@@ -91,10 +92,10 @@ function Banner() {
               className="d-block w-100 banner-img"
               alt="Slide 3"
             />
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h3>Neapolitan Pizza</h3>
               <p className="fs-5">
-                If you are looking for traditional Italian pizza ,the Neapolitan
+                If you are looking for traditional Italian pizza, the Neapolitan
                 is the best option!
               </p>
             </div>
@@ -106,10 +107,10 @@ function Banner() {
               className="d-block w-100 banner-img"
               alt="Slide 4"
             />
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h3>Neapolitan Pizza</h3>
               <p className="fs-5">
-                If you are looking for traditional Italian pizza ,the Neapolitan
+                If you are looking for traditional Italian pizza, the Neapolitan
                 is the best option!
               </p>
             </div>
@@ -121,10 +122,10 @@ function Banner() {
               className="d-block w-100 banner-img"
               alt="Slide 5"
             />
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h3>Neapolitan Pizza</h3>
               <p className="fs-5">
-                If you are looking for traditional Italian pizza ,the Neapolitan
+                If you are looking for traditional Italian pizza, the Neapolitan
                 is the best option!
               </p>
             </div>
