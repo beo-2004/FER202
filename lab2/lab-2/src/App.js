@@ -1,8 +1,8 @@
 import "./App.css";
-import Header from "./Header";
-import Banner from "./Banner";
-import Menu from "./Menu";
-import Booking from "./Booking";
+import Header from "./compoment/Header";
+import Banner from "./compoment/Banner";
+import Menu from "./compoment/Menu";
+import Booking from "./compoment/Booking";
 
 function App() {
   return (
