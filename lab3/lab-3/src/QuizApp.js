@@ -36,20 +36,36 @@ class QuizApp extends Component {
       currentQuestion: 0,
       score: 0,
       quizEnd: false,
+      showCorrectAnswer: false,
+      userAnswer: '',
+      isCorrect: false,
     };
   }
 
   handleAnswer = (selected) => {
     const { questions, currentQuestion, score } = this.state;
     const isCorrect = selected === questions[currentQuestion].answer;
+    
     this.setState({
       score: isCorrect ? score + 1 : score,
-      currentQuestion: currentQuestion + 1,
-    }, () => {
-      if (this.state.currentQuestion >= questions.length) {
-        this.setState({ quizEnd: true });
-      }
+      showCorrectAnswer: true,
+      userAnswer: selected,
+      isCorrect: isCorrect,
     });
+
+    // Chuyển sang câu hỏi tiếp theo sau 3 giây
+    setTimeout(() => {
+      this.setState({
+        currentQuestion: currentQuestion + 1,
+        showCorrectAnswer: false,
+        userAnswer: '',
+        isCorrect: false,
+      }, () => {
+        if (this.state.currentQuestion >= questions.length) {
+          this.setState({ quizEnd: true });
+        }
+      });
+    }, 3000);
   };
 
   handleReplay = () => {
@@ -61,16 +77,75 @@ class QuizApp extends Component {
   };
 
   render() {
-    const { questions, currentQuestion, score, quizEnd } = this.state;
+    const { questions, currentQuestion, score, quizEnd, showCorrectAnswer, userAnswer, isCorrect } = this.state;
     return (
-      <div>
+      <div style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        padding: '20px',
+        fontFamily: 'Arial, sans-serif'
+      }}>
         {!quizEnd && currentQuestion < questions.length ? (
-          <Question
-            question={questions[currentQuestion].question}
-            options={questions[currentQuestion].options}
-            qid={currentQuestion + 1}
-            onAnswer={this.handleAnswer}
-          />
+          <div>
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '20px',
+              background: 'rgba(255,255,255,0.1)',
+              padding: '15px',
+              borderRadius: '15px',
+              border: '2px solid #ff6b6b'
+            }}>
+              <h1 style={{
+                color: '#fff',
+                fontSize: '2.5em',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                margin: '0',
+                background: 'linear-gradient(45deg, #ff6b6b, #feca57)',
+                padding: '10px',
+                borderRadius: '15px',
+                border: '2px solid #fff'
+              }}>
+                🎮 Quiz Game 🎮
+              </h1>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '20px',
+                marginTop: '15px'
+              }}>
+                <span style={{
+                  color: '#fff',
+                  fontSize: '1.2em',
+                  background: 'rgba(255,255,255,0.2)',
+                  padding: '8px 15px',
+                  borderRadius: '10px',
+                  border: '2px solid #48dbfb'
+                }}>
+                  Question: {currentQuestion + 1}/{questions.length}
+                </span>
+                <span style={{
+                  color: '#fff',
+                  fontSize: '1.2em',
+                  background: 'rgba(255,255,255,0.2)',
+                  padding: '8px 15px',
+                  borderRadius: '10px',
+                  border: '2px solid #ff9ff3'
+                }}>
+                  Score: {score}
+                </span>
+              </div>
+            </div>
+            <Question
+              question={questions[currentQuestion].question}
+              options={questions[currentQuestion].options}
+              correctAnswer={questions[currentQuestion].answer}
+              qid={currentQuestion + 1}
+              onAnswer={this.handleAnswer}
+              showCorrectAnswer={showCorrectAnswer}
+              userAnswer={userAnswer}
+              isCorrect={isCorrect}
+            />
+          </div>
         ) : (
           <Score score={score} total={questions.length} onReplay={this.handleReplay} />
         )}
