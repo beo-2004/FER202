@@ -2,46 +2,76 @@ import React, { useContext } from 'react';
 import QuizContext from './QuizProvider';
 
 const QuizDisplay = () => {
-  const { quizData, currentQuestion, selectedAnswer, setSelectedAnswer, checkAnswer, score } = useContext(QuizContext);
+  const { quizData, currentQuestion, selectedAnswer, handleSelectAnswer, answerStatus } = useContext(QuizContext);
+
+  if (currentQuestion >= quizData.length) {
+    return null; 
+  }
+
+  const getOptionStyle = (option) => {
+    const baseStyle = {
+      border: '2px solid #d3d3d3',
+      borderRadius: '8px',
+      padding: '16px',
+      transition: 'all 0.3s',
+      cursor: 'pointer'
+    };
+
+    if (!answerStatus) {
+      return selectedAnswer === option
+        ? { ...baseStyle, borderColor: '#a3a3a3', backgroundColor: '#e5e5e5' }
+        : baseStyle;
+    }
+
+    const isCorrect = option === quizData[currentQuestion].correctAnswer;
+    const isSelected = option === selectedAnswer;
+
+    if (isCorrect) {
+      return { ...baseStyle, borderColor: '#4caf50', backgroundColor: '#e8f5e9', color: '#2e7d32', fontWeight: 'bold' };
+    }
+    if (isSelected && !isCorrect) {
+      return { ...baseStyle, borderColor: '#f44336', backgroundColor: '#ffebee', color: '#c62828' };
+    }
+    
+    return { ...baseStyle, opacity: 0.6, cursor: 'not-allowed' };
+  };
 
   return (
-    <div className="bg-white/70 backdrop-blur-sm shadow-2xl shadow-indigo-200/50 rounded-2xl p-6 md:p-8">
-      {currentQuestion < quizData.length ? (
-        <div>
-          <h2 className="text-xl md:text-2xl font-bold text-indigo-800 mb-2">Question {currentQuestion + 1}/{quizData.length}</h2>
-          <p className="text-lg md:text-xl font-semibold text-gray-800 mb-6">{quizData[currentQuestion].question}</p>
-          <div className="space-y-3">
-            {quizData[currentQuestion].answers.map((option, index) => {
-              const isSelected = selectedAnswer === option;
-              return (
-                <div key={index} 
-                  className={`border-2 rounded-lg p-4 transition-all duration-300 ${isSelected ? 'border-indigo-500 bg-indigo-100/50 shadow-md' : 'border-gray-200 hover:border-indigo-400 hover:bg-indigo-50/50'}`}>
-                  <label className="flex items-center w-full cursor-pointer">
-                    <input
-                      type="radio"
-                      name="answer"
-                      value={option}
-                      checked={isSelected}
-                      onChange={(e) => setSelectedAnswer(e.target.value)}
-                      className="mr-4 h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300"
-                    />
-                    <span className="font-medium text-gray-700">{option}</span>
-                  </label>
-                </div>
-              );
-            })}
-          </div>
-          <button onClick={checkAnswer} 
-            className="mt-8 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-transform duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg">
-            Next
-          </button>
+    <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(4px)', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', borderRadius: '16px', padding: '24px', maxWidth: '576px', margin: 'auto' }}>
+      <div>
+        <div style={{ textAlign: 'center', marginBottom: '24px', backgroundColor: 'rgba(243, 244, 246, 0.8)', padding: '16px', borderRadius: '12px', border: '2px solid #e5e7eb' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#1f2937', marginBottom: '8px' }}>
+            Question {currentQuestion + 1}/{quizData.length}
+          </h2>
+          <p style={{ fontSize: '20px', fontWeight: '600', color: '#374151', marginBottom: '16px' }}>
+            {quizData[currentQuestion].question}
+          </p>
         </div>
-      ) : (
-        <div className="text-center py-8">
-          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Quiz Completed!</h2>
-          <p className="text-2xl text-center mt-4 text-gray-600">Your score: <span className="font-bold text-indigo-700">{score}</span> / {quizData.length}</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {quizData[currentQuestion].options.map((option, index) => {
+            return (
+              <div
+                key={index}
+                style={getOptionStyle(option)}
+                onClick={() => !answerStatus && handleSelectAnswer(option)}
+              >
+                <label style={{ display: 'flex', alignItems: 'center', width: '100%', cursor: !answerStatus ? 'pointer' : 'not-allowed' }}>
+                  <input
+                    type="radio"
+                    name={`answer-${currentQuestion}`}
+                    value={option}
+                    checked={selectedAnswer === option}
+                    onChange={() => handleSelectAnswer(option)}
+                    disabled={!!answerStatus}
+                    style={{ marginRight: '16px', height: '20px', width: '20px' }}
+                  />
+                  <span style={{ fontWeight: '500' }}>{option}</span>
+                </label>
+              </div>
+            );
+          })}
         </div>
-      )}
+      </div>
     </div>
   );
 };
