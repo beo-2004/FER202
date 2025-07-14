@@ -1,0 +1,215 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.laptop-card {
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  background: #fff;
+}
+.laptop-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+.laptop-image-wrapper {
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+.laptop-detail-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  background: #fff;
+}
+@media (max-width: 600px) {
+  .laptop-detail-card {
+    max-width: 98vw;
+  }
+  .laptop-card {
+    min-width: 90vw;
+  }
+}
+
+body, html {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: #222;
+}
+
+.container, .container-fluid {
+  min-height: 100vh;
+  padding: 0;
+  background: transparent;
+}
+
+/* Header modern style */
+.navbar {
+  border-radius: 0 0 18px 18px;
+  background: #fff !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 0.7rem 2rem;
+}
+.navbar-brand {
+  color: #2b6cb0 !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar .fw-semibold.text-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+}
+
+/* Button modern style */
+.btn {
+  border-radius: 10px !important;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+.btn-outline-danger {
+  border: 1.5px solid #e53e3e;
+  color: #e53e3e;
+}
+.btn-outline-danger:hover {
+  background: #e53e3e;
+  color: #fff;
+}
+.btn-outline-primary {
+  border: 1.5px solid #3182ce;
+  color: #3182ce;
+}
+.btn-outline-primary:hover {
+  background: #3182ce;
+  color: #fff;
+}
+.btn-success {
+  background: #38a169;
+  border: none;
+}
+.btn-success:hover {
+  background: #2f855a;
+}
+
+/* Card modern style */
+.laptop-card, .laptop-detail-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  background: #fff;
+  border: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.laptop-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+}
+.laptop-image-wrapper {
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Section title */
+h2.text-center.mb-4 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2b6cb0;
+  letter-spacing: 1px;
+  margin-bottom: 2rem !important;
+}
+
+/* Form modern style */
+form, .form-control {
+  border-radius: 12px !important;
+  box-shadow: 0 1px 6px rgba(44,62,80,0.04);
+  border: 1px solid #e2e8f0 !important;
+  background: #fff !important;
+}
+.form-control:focus {
+  border-color: #3182ce !important;
+  box-shadow: 0 0 0 2px #90cdf4 !important;
+}
+
+/* Login form */
+section.vh-100 {
+  background: linear-gradient(120deg, #e0e7ef 0%, #f8fafc 100%);
+}
+
+.login-bg {
+  background: linear-gradient(120deg, #e0e7ef 0%, #f8fafc 100%);
+}
+.login-box {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-box:hover {
+  box-shadow: 0 16px 48px rgba(44,62,80,0.18);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 0.7rem;
+  }
+  .laptop-detail-card {
+    max-width: 98vw;
+  }
+  .laptop-card {
+    min-width: 90vw;
+  }
+  h2.text-center.mb-4 {
+    font-size: 1.3rem;
+  }
+}
