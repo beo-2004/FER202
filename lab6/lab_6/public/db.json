@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the capital of France?",
+      "options": ["London", "Berlin", "Paris", "Madrid"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 2,
+      "question": "Which programming language is known as the 'language of the web'?",
+      "options": ["Java", "Python", "JavaScript", "C++"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyperlink and Text Markup Language"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "question": "Which of the following is a JavaScript framework?",
+      "options": ["Django", "React", "Flask", "Express"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 5,
+      "question": "What is Redux used for in React applications?",
+      "options": ["Styling components", "State management", "Routing", "API calls"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 6,
+      "question": "Which hook is used to access Redux state in React components?",
+      "options": ["useState", "useEffect", "useSelector", "useDispatch"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 7,
+      "question": "What is the purpose of Redux Thunk?",
+      "options": ["To handle async actions", "To style components", "To manage routing", "To handle forms"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 8,
+      "question": "Which function from Redux Toolkit creates a slice?",
+      "options": ["createStore", "createSlice", "createReducer", "createAction"],
+      "correctAnswer": 1
+    }
+  ]
+}
