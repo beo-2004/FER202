@@ -1,0 +1,20 @@
+.App {
+  font-family: "Ancizar Serif", serif;
+}
+.nav-link {
+  color: #a9a9a9;
+}
+.active {
+  color: #fff;
+}
+.px-6 {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.bg-gray {
+  background: #333333;
+}
+.banner-img {
+  height: 300px; 
+  width: auto;
+}

@@ -1,0 +1,98 @@
+{
+  "Laptops": [
+    {
+      "id": "1",
+      "brand": "Dell",
+      "model": "XPS 13",
+      "year": 2023,
+      "price": "$999",
+      "image": "/images/dell-xps13.jpg"
+    },
+    {
+      "id": "2",
+      "brand": "Apple",
+      "model": "MacBook Pro",
+      "year": 2022,
+      "price": "$2500",
+      "image": "/images/macbook-pro.jpg"
+    },
+    {
+      "id": "3",
+      "brand": "HP",
+      "model": "Spectre x360",
+      "year": 2021,
+      "price": "$1800",
+      "image": "/images/hp-spectre.jpg"
+    },
+    {
+      "id": "4",
+      "brand": "Lenovo",
+      "model": "ThinkPad X1",
+      "year": 2020,
+      "price": "$1600",
+      "image": "/images/lenovo-thinkpad.jpg"
+    },
+    {
+      "id": "e34e",
+      "brand": "LG",
+      "model": "Laptop LG Gram 2023 14ZD90R-G.AX52A5",
+      "year": "2024",
+      "price": "$1200",
+      "image": "/images/laptop1.png"
+    },
+    {
+      "id": "7f00",
+      "brand": "ACER",
+      "model": "Laptop ACER Aspire 3 A315-59-51X8",
+      "year": "2025",
+      "price": "$2000",
+      "image": "/images/laptop2.jpg"
+    },
+    {
+      "id": "b4e5",
+      "brand": "Dell",
+      "model": "Dell Vostro 5630 i5P085W11GRU",
+      "year": "2025",
+      "price": "$3600",
+      "image": "/images/laptop3.png"
+    },
+    {
+      "id": "bbd0",
+      "brand": "MSI",
+      "model": "Laptop MSI Katana 15 B13VEK-252VN",
+      "year": "2025",
+      "price": "$2400",
+      "image": "/images/laptop4.png"
+    }
+  ],
+  "UserAccounts": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "1234567",
+      "account_type": "admin",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "username": "jane",
+      "password": "1234567",
+      "account_type": "user",
+      "status": "inactive"
+    },
+    {
+      "id": "3",
+      "username": "alice",
+      "password": "1234567",
+      "account_type": "user",
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "username": "bob",
+      "password": "1234567",
+      "account_type": "guest",
+      "status": "active"
+    }
+  ]
+}
